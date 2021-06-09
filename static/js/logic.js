@@ -55,21 +55,20 @@ function createMap(weekEarthquakes) {
     legend.onAdd = function (myMap) {    
         var div = L.DomUtil.create("div", "info.legend"),
         limitsDepth = [-10, 10, 30, 50, 70, 90],
-        legendInfo = ["-10 - 10", "10 - 30", "30 - 50", "50 - 70", "70 - 90", "90 +"]
+        labelDepth = ["-10 - 10", "10 - 30", "30 - 50", "50 - 70", "70 - 90", "90 +"]
         labels = [];
   
-        //div.innerHTML += 'Depth<br><hr>'
-        var labelDepth = "<h1>Earthquake D</h1>"
-        div.innerHTML = labelDepth;
-        limitsDepth.forEach(function(legendInfo, index){
-            labels.push('<i style="background: ' + colorPicker(limitsDepth[i]) + "\><strong>" + limitsDepth[legendInfo] + "</li>");
-        });
+        div.innerHTML += 'Depth<br><hr>'
+        //var legendInfo = "<h1>Depth</h1>" +
+        //"<div class=\"labels\">" +
+        //"<div class=\"min\">" + limits[0] + "</div>" +
+       // "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
+        //"</div>";
     
-       // for (var i = 0; i < limitsDepth.length; i++) 
-        //{
-        //    div.innerHTML +=
-        //        '<i style="background-color:' + colorPicker(limitsDepth[i]) + '"></i> ' + limitsDepth[i] + (limitsDepth[i + 1] + limitsDepth[i + 1] + '<br>' + '+');
-        //}
+        for (var i = 0; i < limitsDepth.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + colorPicker(limitsDepth[i] + 1) + '">.  .</i> ' + limitsDepth[i] + (limitsDepth[i + 1] ? ' - ' + limitsDepth[i + 1] + '<br>' : '+');
+        }
     
     return div;
         
