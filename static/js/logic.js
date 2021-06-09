@@ -55,7 +55,7 @@ function createMap(weekEarthquakes) {
     legend.onAdd = function (myMap) {    
         var div = L.DomUtil.create("div", "info.legend"),
         limitsDepth = [-10, 10, 30, 50, 70, 90],
-        legendInfo = ["-10 til 10", "10 til 30", "30 til 50", "50 til 70", "70 til 90", "90 plus"]
+        legendInfo = ["-10 - 10", "10 - 30", "30 - 50", "50 - 70", "70 - 90", "90 +"]
         labels = [];
   
         //div.innerHTML += 'Depth<br><hr>'
